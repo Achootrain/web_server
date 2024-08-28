@@ -2,10 +2,7 @@ module.exports = (sequelize, DataTypes) => {
     const Project_joined = sequelize.define('project_joined', {
       manager_id: {
         type: DataTypes.INTEGER,
-        references: {
-          model: 'project',
-          key: 'manager_id'
-        }},
+      },
         id: {
           type: DataTypes.INTEGER,
           autoIncrement: true,
@@ -30,5 +27,6 @@ module.exports = (sequelize, DataTypes) => {
 
     });
     return Project_joined;
+    
   };
   
