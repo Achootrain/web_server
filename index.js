@@ -77,7 +77,7 @@ app.use('/Feedback', feedbackRouter);
 
 db.sequelize.sync().then(() => {
 //listen : the app listens for incoming requests at port 3001 ()
-app.listen( process.env.PORT||3001, () => {
+app.listen( process.env.PORT,"0.0.0.0", () => {
     console.log("Sever running on port 3001")
 });
 })
