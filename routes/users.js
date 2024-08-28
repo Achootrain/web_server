@@ -1,7 +1,7 @@
 const express= require('express');
 const router= express.Router();
 const {users} =require("../models");//import the basics model from the models folder (/models/basics.js)
-const bcrypt = require('bcrypt');//hashing the password function
+const bcrypt = require('bcryptjs');//hashing the password function
 const {sign}=require('jsonwebtoken');//signing the token function
 
 router.get('/', async(req,res) => {
