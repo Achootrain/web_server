@@ -7,7 +7,10 @@ router.post('/findFeedback',validateToken, async(req,res) => {
     const data=req.body;
     const report_id=data.report_id;
     const manager=await basics.findOne({where:{user_id:data.manager_id}});
+
     const manager_avatar=manager.picture;
+    if(!manager_avatar){manager_avatar="";}
+    
     const dt=await feedback.findAll({where:{report_id:report_id}});
     res.json({dt,manager_avatar});
 });//request-> / ->response-> 
