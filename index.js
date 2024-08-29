@@ -1,13 +1,12 @@
+require('dotenv').config();
 const express =require('express');
 const app = express();
 const db= require('./models');
 app.use(express.json());// parse the data sent by client in json format
 const cors=require('cors');
-app.use(cors({
-    origin: 'your-client-app-url', // Replace with your client app's URL
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization']
-}));
+
+app.use(cors());
+
 //ROUTERS
 const basicsRouter = require('./routes/basics');// case-insensitive on windows sever
 app.use('/basics', basicsRouter); // request sent to postRouter->finding the route at Posts->response
