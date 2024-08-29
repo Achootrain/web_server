@@ -18,4 +18,9 @@ res.json(data); // response: send the data back to the client
 
 })
 
+router.get('/', async(req,res) => {
+    const data= await basics.findAll();//find all records in the basics table
+    res.json(data);//response->
+});//request-> / ->response->
+
 module.exports= router;

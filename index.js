@@ -77,8 +77,9 @@ app.use('/Report', reportRouter);
 const feedbackRouter=require('./routes/Feedback');
 app.use('/Feedback', feedbackRouter);
 
+
+const PORT = process.env.PORT || 3000; // Fallback to 3000 if PORT is not defined
 db.sequelize.sync().then(() => {
-    const PORT = process.env.PORT || 3000; // Fallback to 3001 if PORT is not defined
     app.listen(PORT, "0.0.0.0", () => {
         console.log(`Server running on port ${PORT}`);
     });
