@@ -7,8 +7,11 @@ const {validateToken} = require( "../middleware/authorization");
 router.post('/getUser',validateToken, async(req,res) => {
     const id= req.user.id;
     const data= await basics.findOne({where:{user_id:id}});//find all records in the basics table
-    res.json(data.picture);//response->
-});//request-> / ->response-> 
+    if(data){
+    res.json(data.picture);}
+    else res.json("")
+
+});
 
 //post(): handling data sent by client ( from front-end web page)
 router.post('/', async(req,res) => {
