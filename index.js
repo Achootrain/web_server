@@ -6,7 +6,7 @@ app.use(express.json());// parse the data sent by client in json format
 const cors=require('cors');
 
 const corsOptions = {
-    origin: ['http://localhost:3000', 'https://br--atcmanager.netlify.app'], // Allow localhost for dev and your Netlify app for production
+    origin: ['http://localhost:3000', 'https://br--atcmanager.netlify.app','https://cdn.tailwindcss.com'], // Allow localhost for dev and your Netlify app for production
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Allowed HTTP methods
     allowedHeaders: ['Content-Type', 'Authorization','token'], // Allowed headers
     credentials: true, // Allow credentials like cookies, authorization headers
